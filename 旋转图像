@@ -1,0 +1,18 @@
+先把主对角线当成一个对称轴，得到的图像再以每行中间的数字为轴得到图像就是旋转后的图像
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        i=0
+        while i<len(matrix):
+            j=i
+            while j<len(matrix):
+                a=matrix[i][j]
+                matrix[i][j]=matrix[j][i]
+                matrix[j][i]=a
+                j+=1
+            i+=1
+        for i in range(len(matrix)):
+            matrix[i]=matrix[i][::-1]
+        return matrix
