@@ -1,0 +1,14 @@
+面积取决于两边的最低值，如果最低值往中间移动，面积可能会增加，如果最大值往中间移动，面积可能不变或者减小，所以将最小值往中间移动，面积就等于hight[最小值]*（最大值-最小值）。
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        i,j=0,len(height)-1
+        s=0
+        while i<j:
+            if height[i]<height[j]:
+                s=max(s,height[i]*(j-i))
+                i+=1
+            else:
+                s=max(s,height[j]*(j-i))
+                j-=1
+        return s
+    
