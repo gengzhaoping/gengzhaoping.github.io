@@ -1,0 +1,30 @@
+先设置self.t=0，后面判断是否符合，符合继续下列操作依次输出FirstSecondThird
+class Foo:
+    def __init__(self):
+        self.t=0
+
+
+    def first(self, printFirst: 'Callable[[], None]') -> None:
+        
+        # printFirst() outputs "first". Do not change or remove this line.
+        while self.t!=0:
+            pass
+        printFirst()
+        self.t=1
+
+
+    def second(self, printSecond: 'Callable[[], None]') -> None:
+        
+        # printSecond() outputs "second". Do not change or remove this line.
+        while self.t!=1:
+            pass
+        printSecond()
+        self.t=2
+
+
+    def third(self, printThird: 'Callable[[], None]') -> None:
+        
+        # printThird() outputs "third". Do not change or remove this line.
+        while self.t!=2:
+            pass
+        printThird()
