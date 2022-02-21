@@ -1,0 +1,11 @@
+假设跳跃最大距离是maxn，n为数组长度，设i为当前位置，如果可以跳到当前位置那么他最大距离增加到i+nums[i]，如果最后可以到达的最大位置大于等于最后一个位置，则返回True，否则返回False。
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        maxn=0
+        n=len(nums)
+        for i in range(n):
+            if i<=maxn:
+                maxn=max(maxn,i+nums[i])
+                if maxn>=n-1:
+                    return True
+        return False
